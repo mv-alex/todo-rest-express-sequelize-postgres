@@ -51,9 +51,6 @@ passport.deserializeUser(async (id, cb) => {
   }
 });
 
-passport.authenticate("local", {
-  failureFlash: "Invalid username or password.",
-});
 //  add strategy
 passport.use("local", new LocalStrategy(options, verify));
 
