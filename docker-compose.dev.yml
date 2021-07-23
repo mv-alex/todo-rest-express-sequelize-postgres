@@ -1,0 +1,32 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+
+services:
+  todo:
+    image: todo
+    ports:
+      - "3000:3000"
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/Users/alex/Documents/git/todo-rest-express-sequelize-postgres/
+    environment:
+      - PORT=3000
+      - DB_USER=admin
+      - DB_PASSWORD=password
+      - DB_NAME=todo
+      - DB_HOST=postgres
+      - DB_PORT=5432
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=todo
+    ports:
+      - "5431:5432"
