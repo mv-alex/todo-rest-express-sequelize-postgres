@@ -17,12 +17,7 @@ nodemon works with docker. monitors changes and restarts the project
 
 #### Request body
 
-{
-username: "example"
-password: "123"
-email: "example@ex.ex"
-firstname: "Myfirstname"
-}
+`json{ username: "example", password: "123", email: "example@ex.ex", firstname: "Myfirstname", } `
 
 ### Login user
 
@@ -30,10 +25,7 @@ firstname: "Myfirstname"
 
 #### Request body
 
-{
-username: "example"
-password: "123"
-}
+`json{ username: "example" password: "123" }`
 
 ### Logout user
 
@@ -51,9 +43,7 @@ password: "123"
 
 #### Request body
 
-{
-task: "example task"
-}
+`json{ task: "example task" }`
 
 ### Delete task
 
@@ -65,10 +55,7 @@ task: "example task"
 
 #### Request body
 
-{
-task: "example task",
-done: "true"
-}
+`json{ task: "example task", done: "true" }`
 
 ### Get all tasks
 
